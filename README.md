@@ -13,13 +13,19 @@ A featured story rotates automatically every week (it flips each Thursday, so th
 Search any topic — *"rescue"*, *"Inca"*, *"underdog"*, *"data"* — or filter by theme. Every story in the library is written to be **spoken**, not read, and comes with:
 
 - **The Hook** — one gripping opening line (with a reminder to pause after it)
+- **Set the Scene** — a spoken context line that connects the story to something the room already knows
 - **The Story** — 2–3 minutes of history at a comfortable speaking pace
-- **The Bridge** — pre-written tie-ins that turn the history into a shop lesson for your chosen theme
+- **The Bridge** — pre-written tie-ins that turn the history into a concrete shop lesson for your chosen theme
 - **The Message** — a closing call-to-action tailored to who's in the room: **technicians**, **office & support staff**, or the **whole team**
+- **The Quote** — a real historical quote or phrase to write on the whiteboard and leave up as the theme until next Wednesday
 - **A pocket fact** for hallway conversations after the meeting
 
 ### 📚 The Library
-21 curated stories, told from the front of a shop rather than a lectern — including the 2010 Chilean miners rescue, the Golden Gate Bridge safety net, the Inca chasqui relay runners, the Aztec chinampas, Bolívar and San Martín crossing the Andes, the Battle of Puebla, Maya astronomers, the quipu record-keepers, Juana Azurduy, the Voladores of Veracruz, plus Shackleton, Apollo 13, the Wright brothers, Florence Nightingale, Toyota's andon cord, and more.
+28 curated stories, told from the front of a shop rather than a lectern:
+
+- **Latin American history** — the 2010 Chilean miners rescue, the Inca chasqui relay runners and quipu record-keepers, the Aztec chinampas, Bolívar and San Martín crossing the Andes, the Battle of Puebla, Maya astronomers, Juana Azurduy, and the Voladores of Veracruz
+- **History everyone knows** — Shackleton, Apollo 13, the Wright brothers, Hannibal, Rome's aqueducts and Cincinnatus, Florence Nightingale, the Golden Gate Bridge safety net, the Panama Canal, the Miracle on Ice
+- **Modern business stories** — the Miracle on the Hudson, Ford's turnaround under Alan Mulally, UPS's no-left-turns routing, Starbucks closing 7,100 stores to practice, the Tylenol recall, Southwest's ten-minute turn, and Toyota's andon cord
 
 ⭐ favorite the ones you love, and ✓ mark stories as **told** so you never repeat one with the team.
 
