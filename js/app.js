@@ -133,6 +133,7 @@ function renderWeeklyCard() {
     </div>
     <div class="weekly-side">
       <button class="btn btn-primary" data-build="${story.id}">Build my talk →</button>
+      ${story.bridges.efficiency ? `<button class="btn btn-accent" data-build-eff="${story.id}">⚙️ Make it an efficiency talk</button>` : ""}
       <button class="btn btn-ghost" data-practice-story="${story.id}">🎤 Practice it tonight</button>
       <div class="card-themes">${themeTagsHtml(story)}</div>
     </div>
@@ -598,6 +599,8 @@ $("#practiceRandomBtn").addEventListener("click", () => {
 
 /* ---------------- global card buttons ---------------- */
 document.addEventListener("click", (e) => {
+  const buildEff = e.target.closest("[data-build-eff]");
+  if (buildEff) { openBuilder(buildEff.dataset.buildEff, { theme: "efficiency" }); return; }
   const build = e.target.closest("[data-build]");
   if (build) { openBuilder(build.dataset.build); return; }
   const prac = e.target.closest("[data-practice-story]");
