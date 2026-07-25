@@ -7,7 +7,7 @@
 
 const THEMES = {
   safety:     { label: "Safety",             icon: "🦺", blurb: "Watching out for each other, controlling hazards, going home whole." },
-  efficiency: { label: "Efficiency",         icon: "⚙️", blurb: "Planning, logistics, removing waste, working smarter." },
+  efficiency: { label: "Efficiency",         icon: "⚙️", blurb: "Beating the estimate — hours quoted vs. hours on the job, wrench time, no wasted motion." },
   quality:    { label: "Quality & Craft",    icon: "🛠️", blurb: "Doing it right, precision, pride in the work." },
   teamwork:   { label: "Teamwork",           icon: "🤝", blurb: "Trust, communication, pulling in the same direction." },
   growth:     { label: "Training & Growth",  icon: "🌱", blurb: "Learning, practice, getting a little better every week." },
@@ -29,9 +29,9 @@ const CLOSERS = {
     everyone: "So this week, every one of us — shop and office — owns one thing: if you see it, say it. A hazard, a shortcut, a bad day someone's having. The best rescue is the one we never need, because somebody spoke up early.",
   },
   efficiency: {
-    technicians: "This week, I want each of us to find one trip we don't need to make. One walk back to the toolbox, one wait on parts, one job we set up twice. Find it, flag it, and let's fix it together. Small minutes add up to big hours.",
-    office: "This week, look at one process you touch every day and ask: is there a step here nobody would miss? One less handoff, one clearer note on a work order — that's how we buy back time for the whole shop.",
-    everyone: "So here's the challenge for this week: everybody finds one small piece of friction — one delay, one double-handle, one 'we've always done it that way' — and brings it forward. We don't need a miracle. We need fifty small wins.",
+    technicians: "Here's my challenge for this week, and it's personal: before you pick up a wrench, know your hours. What's the estimate on this job, and what's your plan to beat it? Walk the job first. Stage your parts. And when something starts eating your clock — a fastener from hell, a part that didn't show, a diagnosis that's fighting you — flag it early instead of grinding quietly. Your efficiency number isn't luck, and it isn't a race. It's the sum of fifty small decisions you control before and during every job.",
+    office: "This week, remember that every tech's efficiency number starts at your desk. A complete work order, an accurate estimate, parts staged before the unit hits the bay — when the setup is right the first time, the techs beat their hours, and when they beat their hours, everything downstream of us gets easier. The clock on every job starts before the wrench does. Sweat the setup.",
+    everyone: "So this week the scoreboard is simple: hours estimated versus hours turned, one job at a time. Techs — plan the job before you start it, and speak up the moment one starts going sideways. Office — make sure nothing leaves your desk that costs the floor a single extra trip. Every one of us owns a piece of every estimate. Beat it together, job by job.",
   },
   quality: {
     technicians: "This week, build like your name is stamped on it — because it is. The customer may never know what you did under that boom, but you will. Torque it, test it, sign it proud. Do it once, do it right.",
@@ -124,7 +124,7 @@ const STORIES = [
     ],
     bridges: {
       safety: "Every harness, every machine guard, every lockout tag, every wheel chock in this shop is our net. It can look like overhead — time, money, hassle — right up until the day it catches somebody. Nineteen families got their guy home for dinner because one engineer treated 'acceptable losses' as unacceptable. And notice what he didn't do: he didn't wait for a fall to prove the net was worth it. When we flag a frayed lanyard or a bypassed interlock before anything happens, that's us building the net. In this shop the acceptable number of funerals is the same as Strauss's: zero.",
-      efficiency: "Everyone assumed the net was money down the drain. Instead, confident workers moved faster and the job beat expectations. That's the lesson for us: the safe way and the fast way are usually the same way, because fear, rework, and injuries are the real time thieves.",
+      efficiency: "Everyone assumed the net was money down the drain. Instead, the job beat its schedule — because a man who isn't scared works faster, and a man who isn't hurt works tomorrow. Your hours against the estimate obey the same law. The tech who rushes the setup, skips the stands, works worried — he isn't faster; he's one slip away from blowing this job's hours and the next job's too. Set up safe, work confident, and the clock takes care of itself. Safety isn't what slows the estimate down. It's what protects it.",
       quality: "Strauss sweated details other builders shrugged at — hats, goggles, nets, discipline on the steel. That same mindset built a bridge that's still standing over the Pacific ninety years later. People who care about the small stuff build things that last. That's true of bridges and it's true of boom trucks.",
     },
     context: "Every one of us has seen this bridge — postcards, movies, screensavers. What the photos never show is what was hanging underneath it while it was built.",
@@ -148,7 +148,7 @@ const STORIES = [
     ],
     bridges: {
       safety: "The French didn't fail from lack of effort — they failed because they fought the symptom and ignored the cause. That's what a near-miss report is for. That's what a hazard walk is for. The dangers that hurt people in shops are usually the quiet ones we've stopped seeing. Find the mosquito, not the bad air.",
-      efficiency: "Twenty thousand deaths versus a finished canal — same jungle, same job. The difference was root cause thinking. When the same problem keeps biting us — a comeback, a parts delay, a bottleneck — we can swat at it forever, or we can drain the pond it breeds in. This week, let's drain a pond.",
+      efficiency: "The French shoveled harder every year and kept losing; the Americans found the mosquito and finished the canal. Now think about the jobs that always blow their estimate — every shop has them. There's usually a mosquito hiding in them: the same missing spec you hunt down every time, the same seized fastener trick nobody wrote down, the same part that never gets staged. When a job runs over, don't just eat the hours and move on. Ask what actually bit you, and drain that pond — so it never bites your estimate again.",
       resilience: "Gorgas was mocked, underfunded, and nearly fired for a theory that turned out to save the whole project. He kept methodically doing the work until the results spoke. When you know the right way, patience plus persistence beats being popular.",
     },
     context: "Picture the job: a fifty-mile ditch cut through jungle and mountain to connect two oceans — the biggest construction project the world had ever attempted, and by far the deadliest.",
@@ -171,7 +171,7 @@ const STORIES = [
       "No single runner was fast enough to cross the empire. Nobody had to be. Every man ran his mile perfectly and handed off clean. The genius of the system wasn't speed — it was that it never dropped the baton.",
     ],
     bridges: {
-      efficiency: "One runner sprinting his own short leg, then a clean handoff — that's a service shop. Intake to diagnosis, parts to bench, bench to QC, QC to the customer call. We're never slowed down by how fast one person runs. We're slowed down by fumbled handoffs. Smooth handoffs are speed.",
+      efficiency: "Every chasqui ran a short leg he could own completely — and the empire's speed came from nobody dropping the baton. Your hours on a job are your leg of the relay. But look at where estimates actually die in a shop: almost never while somebody's wrenching. They die in the gaps — the unit that sits an hour waiting on a diagnosis handoff, the question that waits until after lunch, the parts nobody called ahead for. Run your leg hard, and blow the conch shell early: tell the next station you're coming before you arrive. That's how a job beats its hours.",
       teamwork: "The chasqui blew his horn before he arrived so the next runner was already at pace. That's what a good teammate does — communicates early, so the next person isn't starting cold. A heads-up call to parts, a note on the work order, a two-minute walk to dispatch: that's your conch shell.",
       quality: "A garbled message at any station poisoned everything down the line, so chasquis were trained relentlessly to pass information exactly. Same with us: the tech's notes, the writer's story on the work order, the parts label. Accuracy at each station is what makes the whole system trustworthy.",
     },
@@ -195,37 +195,13 @@ const STORIES = [
       "By the time the Spanish arrived in 1519, Tenochtitlan held perhaps 200,000 people — bigger than London or Paris at the time — laced with canals and causeways, fed by gardens grown on a swamp nobody else wanted. The conquistadors wrote that they thought they were dreaming.",
     ],
     bridges: {
-      efficiency: "The Aztecs didn't get more land — they got more out of the land they had. That's the mindset for a busy shop: before we ask for more bays, more people, more hours, we ask how much waste is hiding in the bays and hours we already own. Constraints don't kill great teams. They focus them.",
+      efficiency: "The Aztecs couldn't get more land, so they got more out of every square foot they had. You can't get more hours in the day — the estimate is the estimate. What you can do is farm your hours like a chinampa: everything you need within arm's reach before you start, no dead time between steps, the job sequenced so the second trip to the parts counter never happens. The techs who beat their estimates aren't faster with a wrench than anybody else. They waste less of the clock between wrench turns.",
       quality: "A chinampa wasn't a quick hack — willow anchors, layered soil, maintained canals. It was built to produce for centuries, and some still produce today in Xochimilco. Quick fixes feed you once; built-right systems feed you forever. Build the fix that lasts.",
       growth: "Nobody handed the Mexica a manual for lake farming. They experimented, failed, adjusted, and stacked improvements generation after generation until 'worthless swamp' became the breadbasket of an empire. Every skill in this shop got built the same way — layer by layer. Keep stacking.",
     },
     context: "Mexico City — one of the biggest cities in the world today — sits directly on top of this story. The main plaza stands where Tenochtitlan's center stood seven hundred years ago.",
     quote: { text: "Some of our soldiers asked whether the things that we saw were not a dream.", by: "Bernal Díaz del Castillo, conquistador, on first seeing Tenochtitlan" },
     funFact: "You can still visit working chinampas in Xochimilco, Mexico City — they've been farmed continuously for around 700 years.",
-  },
-
-  {
-    id: "bolivar-andes",
-    title: "Bolívar's Impossible Road to Boyacá",
-    region: "Venezuela / Colombia",
-    year: "1819",
-    era: "Latin American independence",
-    tags: ["bolivar", "colombia", "venezuela", "latin america", "independence", "andes", "military", "surprise", "sacrifice", "liberator"],
-    hook: "In 1819, Simón Bolívar looked at the flooded plains, the freezing Andes, and the impossible route — and chose it, precisely because it was impossible.",
-    story: [
-      "By 1819, Simón Bolívar had been fighting for South American independence for nearly a decade, and Spain still held New Granada — modern Colombia — behind the wall of the Andes. Every sane route was watched. So Bolívar picked the insane one: cross the flooded plains of the Casanare in the rainy season, then go over the Páramo de Pisba — a freezing, 13,000-foot high-altitude pass that the Spanish considered impassable. Which is exactly why they weren't guarding it.",
-      "The march was brutal beyond anything the army had imagined. For a week they waded chest-deep through flooded lowlands. Then came the climb — plainsmen and barefoot soldiers from tropical country walking into sleet and thin air with no cold-weather gear. Horses died. Men died. Weapons were lost in rivers. By the time they came down the far side, the army looked like a rumor of itself.",
-      "But they were on the wrong side of the wall — the side where no Spanish army was waiting. The local population fed them, clothed them, and reinforced them. Bolívar gave his men a few days to become an army again, then moved fast before word could spread.",
-      "On August 7th, 1819, at the bridge of Boyacá, his force shattered the Spanish army in about two hours and took nearly the whole force prisoner. Three days later Bolívar rode into Bogotá. The 'impossible' road turned out to be the door — because the hardest way in was the least defended.",
-    ],
-    bridges: {
-      resilience: "Every man on that march wanted to turn back somewhere in the Pisba pass — and the whole campaign was won in the exact stretch where quitting made the most sense. Some weeks in this shop feel like the páramo: cold, uphill, no end in sight. Those are the weeks that decide everything. Keep walking; the far side is closer than it looks.",
-      teamwork: "The army that froze together on that mountain came down the other side welded together — and the local people carried them the rest of the way with food, clothes, and fresh horses. Nobody does the impossible alone. The crew that suffers together and supports each other wins together.",
-      efficiency: "Bolívar won at Boyacá before a shot was fired — in the planning. He studied what his opponent assumed and attacked the assumption. When we plan a big job, the question isn't just 'what's the standard route?' It's 'what is everyone assuming that might not be true?' That's where the breakthroughs hide.",
-    },
-    context: "Six modern countries — Venezuela, Colombia, Ecuador, Peru, Bolivia, and Panama — trace their independence to this one man's campaigns. This is the story of his biggest gamble.",
-    quote: { text: "The art of victory is learned in defeat.", by: "Attributed to Simón Bolívar" },
-    funFact: "Bolívar is the only person in history to have two countries named after him — Bolivia, and Venezuela's official name, the Bolivarian Republic of Venezuela.",
   },
 
   {
@@ -243,61 +219,13 @@ const STORIES = [
       "On February 12th, 1817, at Chacabuco, San Martín's fresh-from-the-mountains army routed the royalist force. Chile's independence followed. Historians rank the crossing with the greatest military operations ever staged — and the battle was won in the workshop years before it was won on the field.",
     ],
     bridges: {
-      efficiency: "Three years of preparation, three weeks of execution, two hours of battle. The work you don't see — the staging, the checklists, the parts pulled the night before — is where the job actually gets won. A slow hour of setup buys a fast day of wrenching. Plan like San Martín.",
+      efficiency: "Three years of preparation, three weeks of execution, two hours of battle — San Martín won at Chacabuco before the army ever moved. Every job in this shop runs on the same equation. The half hour before you start — reading the whole work order, walking the unit, pulling the manual, staging every part and tool at the bay — is the cheapest time you will ever spend, because it decides whether you beat the estimate or chase it all day. Nobody beats their hours mid-job by hurrying. They beat them before the job starts.",
       teamwork: "That army was soldiers, sure — but it was also blacksmiths, weavers, muleteers, and a friar who happened to be a mechanical genius. Every trade mattered. Our shop is the same: the techs turn the wrenches, but parts, dispatch, admin, and the service writers are the supply line. No supply line, no victory.",
       growth: "San Martín interviewed muleteers — the working guys who actually knew the mountain — and treated their knowledge like gold. The best leaders learn from the people closest to the work. If you know something the plan is missing, speak up. And if you're planning, ask the person who's been up the mountain.",
     },
     context: "South America had two great liberators. Bolívar attacked from the north — this is the man who came from the south, and he fought his war with checklists.",
     quote: { text: "Serás lo que debas ser, o no serás nada. — You will be what you must be, or you will be nothing.", by: "General José de San Martín" },
     funFact: "Friar Luis Beltrán, the army's chief engineer, reportedly said that if the cannons needed wings to cross the Andes, wings they would have.",
-  },
-
-  {
-    id: "puebla",
-    title: "Cinco de Mayo: The Day the Underdogs Held the Hill",
-    region: "Mexico",
-    year: "1862",
-    era: "French intervention in Mexico",
-    tags: ["mexico", "latin america", "cinco de mayo", "puebla", "zaragoza", "underdog", "defense", "preparation", "morale"],
-    hook: "Most people think Cinco de Mayo is Mexican independence day. It's actually the story of a badly outnumbered, badly equipped team that refused to lose.",
-    story: [
-      "In 1862, the French army was considered the best in the world — it hadn't lost a major battle in fifty years. Napoleon III sent it to Mexico to collect debts and, while he was at it, install an empire. Around 6,000 professional French soldiers marched toward Mexico City. In their path was the city of Puebla, defended by roughly 2,000 Mexicans — many of them farmers with old rifles and machetes — under a 33-year-old general named Ignacio Zaragoza.",
-      "The French commander was so confident he reportedly wrote home that Mexicans wouldn't stand and fight. Zaragoza couldn't match the French in equipment or numbers, so he matched them in preparation. He fortified two hilltop positions, Loreto and Guadalupe, studied the ground, and placed his people exactly where their courage would count most.",
-      "On May 5th, the French did the arrogant thing: a frontal assault uphill, straight at the forts, three separate times. Zaragoza's line bent and held, bent and held. Rain turned the slopes to mud. By evening, the French army — the best in the world — was retreating, leaving hundreds of casualties on the hillside.",
-      "Strategically, it was one battle in a longer war. But the news electrified Mexico: the invincible army wasn't invincible. Zaragoza's report home became legend: 'The national arms have been covered with glory.' Puebla proved that preparation, terrain, and heart can beat reputation, budget, and arrogance.",
-    ],
-    bridges: {
-      teamwork: "Zaragoza's army was regulars, farmers, and townspeople — a patchwork crew that had every excuse to scatter. They held because they held together, and because their leader put every person where their strengths counted. On a tough week, a united shop full of 'ordinary' people beats a divided one full of stars. Every time.",
-      resilience: "Three uphill assaults from the best army in the world, and the line bent but never broke. Pressure doesn't ask if you're ready — it just shows up: the Monday the schedule doubles, the unit that fails inspection twice, the week three techs are out. What Puebla teaches is that you don't have to be bigger than the problem. You have to hold your position and outlast its third push — because the third push is usually the last one.",
-      quality: "The French lost to overconfidence — they didn't respect the ground, the rain, or the defenders, so they skipped the homework. Reputation doesn't hold a hill, and reputation doesn't torque a bolt. The moment we think we're too experienced to double-check is the moment we become the French at Puebla.",
-    },
-    context: "Everybody in this room has heard of Cinco de Mayo. Almost nobody knows what actually happened on May 5th — which makes this story a gift: you already know the holiday, now here's the fight behind it.",
-    quote: { text: "Las armas nacionales se han cubierto de gloria. — The national arms have been covered with glory.", by: "General Ignacio Zaragoza's dispatch, May 5, 1862" },
-    funFact: "Cinco de Mayo is actually a bigger celebration in the United States than in most of Mexico — where the real national holiday is September 16th, Independence Day.",
-  },
-
-  {
-    id: "maya-astronomers",
-    title: "The Maya: Measuring the Sky Without a Telescope",
-    region: "Mesoamerica",
-    year: "~250–900 AD",
-    era: "Classic Maya",
-    tags: ["maya", "latin america", "astronomy", "mathematics", "data", "measurement", "records", "kpi", "precision", "calendar", "zero"],
-    hook: "With no telescopes, no clocks, and no metal tools, Maya astronomers measured the length of a year more accurately than the calendar Europe was using seven hundred years later.",
-    story: [
-      "Deep in the rainforests of Central America, Maya astronomer-priests spent centuries doing something that sounds simple and is brutally hard: writing down what they saw. Every sunrise. Every appearance of Venus. Every eclipse. Not for one year, or ten — for generations, each observer adding rows to records their grandchildren would keep extending.",
-      "They watched from purpose-built observatories, like El Caracol at Chichén Itzá, with windows aligned to catch specific events on the horizon. And they had a secret weapon most ancient civilizations lacked: a true concept of zero, and a place-value number system that let them calculate across millions of days without losing track.",
-      "The results are staggering. Their Venus tables, preserved in the Dresden Codex, predict the planet's 584-day cycle with an error of roughly a day per century. Their solar year calculations were more accurate than the Julian calendar that Europe was still using when the Spanish arrived. They predicted eclipses. They scheduled planting, ceremonies, and politics off their data.",
-      "Here's the thing: no single Maya observer ever saw the pattern alone. One lifetime of sky-watching is just weather. The power came from small, honest measurements, recorded the same way, stacked up over centuries — until the data revealed truths no genius could have guessed in a single sitting.",
-    ],
-    bridges: {
-      quality: "The Maya records only worked because every entry was honest and consistent — one sloppy scribe could poison a century of data. It's the same with our numbers: hours on the work order, inspection checklists, comeback tracking. Measured honestly, our data tells us the truth about ourselves. And the truth is the only thing we can improve.",
-      efficiency: "Why do we track KPIs every single week? Same reason the Maya logged Venus every single night: one data point is a story, a hundred data points are a pattern, and patterns are where the improvements hide. The boring, repeated measurement is the most powerful tool in the building.",
-      growth: "Each Maya astronomer inherited the records, added their rows, and passed them on better than they found them. That's a shop's knowledge too — every trick a senior tech writes down or teaches forward is a row in the codex. Leave the records better than you found them.",
-    },
-    context: "Before there were telescopes, before there were computers, before there was even glass — there were people in Central America out-measuring the rest of the world with their eyes and a notebook.",
-    quote: { text: "What gets measured gets managed.", by: "Modern business proverb, often credited to Peter Drucker — the Maya proved it a thousand years early" },
-    funFact: "The Maya were one of only a handful of civilizations in human history to independently invent the concept of zero.",
   },
 
   {
@@ -316,84 +244,12 @@ const STORIES = [
     ],
     bridges: {
       quality: "One knot tied wrong could mean a village going hungry, so the keepers checked each other's work as a matter of routine. Our work orders, part numbers, and PO lines are our knots. The person who catches the error before it ships doesn't slow the system down — they ARE the system.",
-      efficiency: "The Incas could move grain to a starving province fast because they always knew what was where. Accurate records aren't paperwork for its own sake — they're speed stored up for the future. Every clean record we make today is a search we don't have to do at some critical moment later.",
+      efficiency: "The Incas could move grain to a starving province in days because every knot was true — the empire ran at the speed of its records. Our estimates work the same way: they're built out of the hours techs logged on jobs like this one before. When your time is recorded honestly and your notes say what really happened — what fought you, what was missing — the next estimate is right, and a right estimate is one you can actually beat. Fudged hours don't hide one bad day. They quietly poison every quote built on top of them.",
       teamwork: "The quipucamayocs never swung a pick or fought a battle, but no warehouse, army, or city functioned without them. In this shop, the people who keep the records, order the parts, and schedule the work are the keepers of the knots. The wrenches can't win without them.",
     },
     context: "Think about everything in this building that lives on paper or a screen — work orders, part numbers, schedules, payroll. Now imagine running all of it with no writing at all.",
     quote: { text: "The palest ink is better than the best memory.", by: "Chinese proverb" },
     funFact: "Researchers still haven't fully decoded quipus — some may contain narrative history, not just numbers, meaning there could be Inca 'books' we can't read yet.",
-  },
-
-  {
-    id: "aqueducts",
-    title: "Built to Outlive the Builders: Rome's Aqueducts",
-    region: "Roman Empire",
-    year: "~312 BC – 100 AD",
-    era: "Ancient Rome",
-    tags: ["rome", "roman", "aqueduct", "engineering", "precision", "craftsmanship", "maintenance", "standards", "pont du gard", "infrastructure"],
-    hook: "Roman engineers built water systems so precise that some of them still work — two thousand years after the last builder died.",
-    story: [
-      "Ancient Rome at its height used more water per person than many modern cities — feeding fountains, baths, homes, and industry. That water traveled dozens of miles from mountain springs, and almost all the way it moved by gravity alone. No pumps. No pressure systems. Just a channel falling a tiny, perfectly controlled amount, mile after mile.",
-      "How tiny? The Pont du Gard aqueduct in southern France drops about 12 meters over 50 kilometers — an average grade of roughly one inch per 300 feet. Too steep and the water tears up the channel; too flat and it stagnates. Roman surveyors held that tolerance across valleys, hills, and tunnels using water levels, sighting instruments, and endless careful measurement — no lasers, no GPS.",
-      "And they built for the long haul. Inspection shafts every so often so crews could get in and maintain the channel. Waterproof linings. Settling tanks to catch debris. Rome even had a water commissioner — Frontinus — who wrote a technical manual on the system, proudly comparing his 'indispensable' aqueducts to the 'idle' pyramids.",
-      "The payoff for all that discipline: the Aqua Virgo, completed in 19 BC, still feeds Rome's Trevi Fountain today. Two thousand years of service, because the people who built it refused to be sloppy about an inch per three hundred feet — on work they knew would mostly be buried underground where no one would ever see it.",
-    ],
-    bridges: {
-      quality: "Most of an aqueduct is invisible — buried channels no citizen would ever admire. The Romans built those hidden miles to the same standard as the famous arches. That's the real definition of craftsmanship: the quality of the work nobody will ever see. The inside of a panel, the underside of a deck — build it all like it's the Trevi Fountain.",
-      safety: "The Romans put inspection shafts in from day one, because they knew every system degrades and planned for humans to check it. That's what our PMs and inspections are — designed-in access to catch small problems while they're still small. Skipping an inspection is bricking over the shaft.",
-      growth: "Frontinus wrote the manual so the next generation wouldn't have to rediscover what his generation knew. Documenting what you know isn't busywork — it's how a two-thousand-year system gets built. Show the apprentice. Write the note. Pass the water down the line.",
-    },
-    context: "Everything we build has a working life — five years, maybe ten, maybe twenty. Now here's a crew whose work is still in service after two thousand.",
-    quote: { text: "Compare, if you will, the idle Pyramids with these indispensable structures.", by: "Frontinus, Rome's water commissioner, writing around 97 AD" },
-    funFact: "Rome's water commissioner Frontinus used flow measurements to catch people illegally tapping the aqueducts — water theft audits, two thousand years before smart meters.",
-  },
-
-  {
-    id: "cincinnatus",
-    title: "Cincinnatus: The Man Who Gave the Power Back",
-    region: "Roman Republic",
-    year: "458 BC",
-    era: "Ancient Rome",
-    tags: ["rome", "roman", "leadership", "humility", "duty", "character", "farmer", "dictator", "washington", "service"],
-    hook: "Rome once handed one farmer absolute power over the entire state. Sixteen days later, he handed it back and went home to finish his plowing.",
-    story: [
-      "In 458 BC, a Roman army was trapped in the mountains, surrounded, days from annihilation. The Republic had an emergency protocol for moments like this: appoint a dictator — one man with total, absolute authority — for up to six months. The Senate knew who they wanted, and the messengers found him not in a palace but behind a plow: Lucius Quinctius Cincinnatus, a former consul who had lost most of his wealth and was working a small farm across the Tiber with his own hands.",
-      "The story goes that he wiped off the sweat, put on his toga, heard the news, and took command that day. He drafted every man of fighting age, marched them out, and executed a night maneuver that surrounded the surrounding army. The enemy, trapped between two Roman forces, surrendered. The campaign was over almost before it began.",
-      "Here's the part Rome never forgot. Cincinnatus now held absolute power, legally, for months to come — armies, treasury, everything. Kings have started wars to get less. He held it for about sixteen days: long enough to finish the job, settle the army, and thank his people. Then he resigned the dictatorship and walked back to his plow.",
-      "For the rest of Roman history, Cincinnatus was the measuring stick for leadership: the man who treated power as a task, not a prize. Two thousand years later, when George Washington shocked the world by resigning his command after winning the Revolution, everyone reached for the same name — and Washington's officers had already founded the Society of the Cincinnati in his honor. There's a city in Ohio named for it.",
-    ],
-    bridges: {
-      teamwork: "Cincinnatus took the lead when the moment demanded it, and stepped back the moment the job was done — no ego on the way in, no ego on the way out. The best crews work exactly like that: on a tough diagnosis, whoever knows that system best runs the job — apprentice or thirty-year vet — and everyone else supports. Then it's done, and the title goes back on the shelf. Step up when it's yours, hand it off clean when it's not, and nobody keeps score.",
-      growth: "Character is a skill you build before the emergency, not during it. Rome trusted Cincinnatus with everything because of how he'd handled small things for decades. Every unglamorous job done right in this shop is a deposit in that same account — and someday the big moment will make a withdrawal.",
-      resilience: "Cincinnatus had lost his fortune and been humbled to a small farm — and he answered the call anyway, without bitterness. Setbacks don't disqualify you from mattering. Some of the most important people in the building are the ones who've been knocked down and still show up ready to serve.",
-    },
-    context: "There's a city in Ohio named after this man, and George Washington was compared to him his whole life — yet most people have never heard the story. It starts in a farm field, mid-plow.",
-    quote: { text: "Acta non verba. — Deeds, not words.", by: "Latin motto" },
-    funFact: "Washington was called 'the American Cincinnatus.' King George III reportedly said that if Washington truly gave up power voluntarily, he would be 'the greatest man in the world.'",
-  },
-
-  {
-    id: "hannibal",
-    title: "Hannibal: Elephants Over the Alps",
-    region: "Carthage / The Alps",
-    year: "218 BC",
-    era: "Ancient — Punic Wars",
-    tags: ["hannibal", "carthage", "alps", "elephants", "military", "audacity", "logistics", "problem solving", "improvisation", "rome"],
-    hook: "Rome was certain of one thing: no army could come at them over the Alps. Hannibal built his entire war on the word 'no army.'",
-    story: [
-      "In 218 BC, Carthage and Rome went to war for the second time, and Rome controlled the sea. Any invasion of Italy by water would be intercepted. So the 29-year-old Carthaginian general Hannibal Barca chose the route his enemy had ruled out completely: overland from Spain, across the Rhône River, and over the Alps — in autumn, as the snows began — with tens of thousands of soldiers, cavalry, pack animals, and thirty-seven war elephants.",
-      "Every stage was a problem nobody had solved before. At the Rhône, his engineers built giant earth-covered rafts to ferry elephants across a river — some panicked, swam, and made it anyway. In the mountains: ambushes from hill tribes, trails that crumbled under the column, snow over ice from an earlier fall, animals sliding off precipices.",
-      "The famous moment came near the top, where a landslide had erased the trail entirely. The army was stuck, freezing, starving. Hannibal's engineers heated the blocking rock with huge bonfires, then — as the ancient historians tell it — poured sour wine and vinegar over it so the stone cracked and could be pried apart. They rebuilt the path by hand, wide enough for elephants, and the army walked through the mountain rather than over it.",
-      "Fifteen days after entering the Alps, Hannibal came down into Italy. He had paid a terrible price in men and animals — but he was standing where Rome had bet everything he could never stand. He then beat Roman armies on their own soil for fifteen years. Whatever else you say about Hannibal, he never met a wall he treated as final.",
-    ],
-    bridges: {
-      resilience: "The landslide didn't care about the plan — the trail was just gone. Hannibal's crew didn't vote on whether the obstacle was fair; they built fires and started cracking rock. Some weeks the trail disappears on us too: a backorder, a failed part, a schedule blown to pieces. The move is always the same. Work the rock in front of you.",
-      efficiency: "Hannibal's edge wasn't strength — Rome had more of everything. His edge was attacking assumptions. 'It can't be done' usually means 'nobody has done it yet.' When a job looks impossible under the standard approach, that's not the end of thinking. That's the start of it.",
-      teamwork: "Engineers, muleteers, cavalry, local guides — the crossing succeeded because dozens of different skills attacked each obstacle together, and Hannibal was on the trail with them, not behind them. Big obstacles don't get moved by the strongest person. They get moved by the most united crew.",
-    },
-    context: "Twenty-two hundred years later, when somebody pulls off the impossible, we still say they 'crossed the Alps.' This is the original — and it involves elephants.",
-    quote: { text: "Aut viam inveniam aut faciam. — I will find a way, or I will make one.", by: "Attributed to Hannibal" },
-    funFact: "Historians still argue about exactly which Alpine pass Hannibal used — expeditions have searched for elephant traces for decades — but at least one elephant, Surus ('the Syrian'), survived and became Hannibal's personal mount.",
   },
 
   {
@@ -461,7 +317,7 @@ const STORIES = [
     bridges: {
       growth: "A thousand practice glides before one powered flight — the Wrights treated skill like a part you manufacture through reps. Every diagnostic you talk through, every practice run, every cert class is a glide at Kitty Hawk. Talent gets you interested; reps make you dangerous. Get your reps.",
       quality: "When the official data looked wrong, the Wrights didn't shrug and use it anyway — they built a wind tunnel and verified it themselves. 'Trust but verify' is a mechanic's superpower. If the spec, the reading, or the diagnosis doesn't smell right, check it. Bad data crashes airplanes and comebacks alike.",
-      efficiency: "Langley spent fifty times the money and got two splashes. The Wrights' edge wasn't budget — it was cheap, fast learning loops: test small, fix, repeat. We don't need the fanciest resources to be the best shop; we need the fastest honest feedback. Small experiments beat big excuses.",
+      efficiency: "Langley spent fifty times the money and got two splashes; the Wrights won on fast, honest feedback loops. Your efficiency number is exactly that kind of loop — if you read it. Every job tells you something: where the hours actually went, which step dragged, what you'd stage differently next time. The techs who consistently beat their estimates aren't luckier or stronger — they review the last job the way the Wrights reviewed a glide, and change one thing every time. Fifty small experiments beat one big excuse.",
     },
     context: "Everyone knows the Wright brothers flew first. What gets forgotten is what they were: two guys who ran a repair shop, up against the best-funded laboratory in America. This one belongs to us.",
     quote: { text: "It is possible to fly without motors, but not without knowledge and skill.", by: "Wilbur Wright" },
@@ -485,7 +341,7 @@ const STORIES = [
     bridges: {
       quality: "The hospital didn't feel like the killer — everyone was busy, everyone cared, and men kept dying anyway. It took honest measurement to see the truth past the effort. That's what our metrics are for: not to grade people, but to catch the invisible problem that hard work alone can't see.",
       safety: "Forty percent of those deaths were preventable — bad water, bad air, bad process — and it all felt 'normal' until someone measured it. The most dangerous hazards are the ones we've gotten used to. When we track near-misses and inspections honestly, we're doing exactly what Nightingale did: making the invisible killer visible before it collects.",
-      efficiency: "Nightingale didn't just collect data — she made it impossible to ignore, turning columns of numbers into one picture that changed minds in a minute. When we review our KPIs on Wednesdays, that's the goal: not numbers for the wall, but a clear picture that tells us the one thing to fix next.",
+      efficiency: "Nightingale's hospital was full of hard workers, and men kept dying anyway — it took the numbers to show why. Your efficiency number does the same job for your week. A week feels busy; the hours say where the busy actually went. Look at your own jobs the way she read her charts — which ones beat the estimate, which blew through it, and what those have in common — and patterns show up that effort alone can't see: the job type that always runs over, the day the parts never came. The number isn't a verdict on you. It's an arrow pointing at the fix.",
     },
     context: "Everybody's heard of 'the lady with the lamp.' The lamp is the famous half of the story. The half that changed the world was a stack of ledgers.",
     quote: { text: "The very first requirement in a hospital is that it should do the sick no harm.", by: "Florence Nightingale" },
@@ -514,54 +370,6 @@ const STORIES = [
     context: "Half the trucks in our parking lot exist because of ideas born on this assembly line. This is the one idea competitors called crazy — right up until every one of them copied it.",
     quote: { text: "Having no problems is the biggest problem of all.", by: "Taiichi Ohno, father of the Toyota Production System" },
     funFact: "In many Toyota plants the andon 'cord' is now a yellow button, and each station triggers its own melody — veterans can tell where a problem is by which tune is playing.",
-  },
-
-  {
-    id: "juana-azurduy",
-    title: "Juana Azurduy: The General They Couldn't Stop",
-    region: "Bolivia / Argentina",
-    year: "1809–1825",
-    era: "Latin American independence",
-    tags: ["juana azurduy", "bolivia", "argentina", "latin america", "independence", "courage", "women in history", "guerrilla", "sacrifice", "perseverance"],
-    hook: "The Spanish Empire spent sixteen years trying to stop one woman in the highlands of Bolivia. They never managed it.",
-    story: [
-      "Juana Azurduy was born in 1780 near Chuquisaca, in what's now Bolivia — a mestiza woman in a colonial world that had exactly zero roles available for her ambitions. When the wars of independence broke out in 1809, she and her husband, Manuel Padilla, chose the revolution. Both of them, together, all in.",
-      "She didn't organize teas for the cause. She recruited and personally led cavalry — including a famous corps of indigenous women fighters called the Amazonas — in the guerrilla war for the highlands. In 1816, she led an assault on the Cerro Rico of Potosí, the richest silver mountain on Earth, and captured the Spanish standard. The revolutionary government made her a lieutenant colonel, sending her a general's sword. The men she commanded didn't follow her because it was polite. They followed her because she won.",
-      "The price she paid is almost unbearable to list. Four of her children died of hunger and disease during campaigns in the wilderness. Her husband was killed rescuing her when she was wounded in battle; the royalists displayed his head on a pike. She fought on — pregnant with her fifth child, she reportedly gave birth on campaign near a riverbank and was fighting again within days.",
-      "Bolivia won its independence in 1825 — the country is named for Bolívar, who traveled personally to salute her and reportedly said the new nation should have carried her name instead. Like too many heroes of the ranks, she died poor and nearly forgotten in 1862. Both Bolivia and Argentina have since made her a symbol of what refusing to quit actually looks like: not one glorious day, but sixteen relentless years.",
-    ],
-    bridges: {
-      resilience: "Juana lost more than most of us can imagine and got up every single time — not because it stopped hurting, but because the mission mattered more than the setback. Nobody's asking sixteen years of that from us. But on the week a job goes sideways twice and the schedule collapses, her standard is worth remembering: grief and grit can ride the same horse.",
-      teamwork: "The revolution didn't hand Juana a command because of her resume — she earned it in front of people who then followed her anywhere. Respect in a shop works the same way: it doesn't come from a title on the door, it comes from what your teammates watch you do when it's hard. Earn it daily; give it where it's earned.",
-      growth: "No academy would train her, so she trained herself into one of the finest cavalry leaders on the continent. The door not being open is not the same as the door being locked. Whatever skill feels 'above your station' — diagnostics, leadership, a new cert — go take it. History belongs to the self-taught.",
-    },
-    context: "History remembers the generals with statues. This is one of the fighters the statues took two hundred years to catch up with.",
-    quote: { text: "This country should not be named for me — it should be named for Padilla or Azurduy.", by: "Attributed to Simón Bolívar, saluting her sacrifice" },
-    funFact: "In 2015, a statue of Juana Azurduy replaced the Columbus statue behind Argentina's presidential palace — 190 years after Bolívar saluted her in person.",
-  },
-
-  {
-    id: "ironbridge",
-    title: "The Bridge Nobody Knew How to Build",
-    region: "England",
-    year: "1779",
-    era: "Industrial Revolution",
-    tags: ["iron bridge", "industrial revolution", "innovation", "first of its kind", "risk", "craftsmanship", "learning", "engineering", "shropshire"],
-    hook: "In 1779, a crew of ironworkers built the world's first iron bridge — with no manual, no precedent, and no one alive who had ever done it before.",
-    story: [
-      "The Severn Gorge in Shropshire, England was the beating heart of the early Industrial Revolution — furnaces, foundries, and factories on both banks of a river that flooded violently and swallowed wooden bridges. The gorge needed a crossing that could survive it. Architect Thomas Pritchard proposed something that had never existed anywhere on Earth: a bridge made of cast iron.",
-      "Nobody knew how to engineer an iron bridge, because there had never been one. There were no textbooks, no standards, no experienced crew to hire. So ironmaster Abraham Darby III and his men did the only thing available: they took the joints they knew from carpentry — dovetails, mortise-and-tenon, wedges — and translated them into 378 tons of cast iron, casting enormous one-piece ribs in sand molds and fitting them together like a giant timber frame, because that was the craft language they trusted.",
-      "They erected the 100-foot main span over a working river without stopping the boat traffic below — scaffolding from within, floating pieces into place, working through the unknowns one rib at a time. The whole iron structure reportedly went up in about three months without serious injury, at a time when major construction routinely killed workers.",
-      "The Iron Bridge opened on New Year's Day 1781, and it became a sensation — artists painted it, engineers pilgrimaged to it, and the town that grew around it is literally named Ironbridge. It still stands today, 240-plus years later: the first of every iron and steel bridge on Earth, built by a crew who started the job not knowing how to do it — and finished it knowing something no one else in the world knew.",
-    ],
-    bridges: {
-      growth: "Every 'first time' job feels like the Iron Bridge — no manual, no one to copy. Darby's crew didn't freeze; they anchored in the fundamentals they'd mastered and extended them one careful step at a time. New model, new system, new tooling: same play. Strong fundamentals plus careful steps beats waiting for a manual that doesn't exist.",
-      quality: "They could have slapped together something temporary. Instead, working at the edge of the possible, they over-built with pride — and it's still standing after two and a half centuries. When you're doing something for the first time is exactly when standards matter most, because you're setting the pattern everyone after you will follow.",
-      resilience: "Half the town said iron would crack, sink, or bankrupt everybody — and Darby personally shouldered debt from the project for the rest of his life to see it stand. Betting on your own workmanship takes nerve. Sometimes the crew has to believe in the build before the world does.",
-    },
-    context: "Every steel bridge, boom, and crane on Earth has an ancestor — one first attempt, built by a crew who had nothing to copy. This is that crew.",
-    quote: { text: "Measure twice, cut once.", by: "Craftsman's proverb, as old as the trades" },
-    funFact: "With no precedent for iron construction, the builders used woodworking joints — dovetails and wedges — cast in metal. You can still see them on the bridge today.",
   },
 
   {
@@ -628,7 +436,7 @@ const STORIES = [
     ],
     bridges: {
       teamwork: "The red slide is the whole lesson. When somebody in this shop raises their hand and says 'my job's going over,' 'I made a mistake,' 'this comeback is mine' — that's not weakness, that's Mark Fields stopping the launch. And our response has to be Mulally's, every single time: thanks for the visibility, who can help? The moment we punish honesty, the charts go green and the problems go underground. Green charts nearly killed Ford. Honest ones saved it.",
-      efficiency: "One team, one plan, one scoreboard, reviewed every single week — that meeting is exactly what our Wednesday huddle is. But notice what made Ford's version work: the colors had to be true. A KPI dashboard where everything's always fine isn't a dashboard, it's wallpaper. When our numbers show red — a blown estimate, a slipping backlog — that red is the most valuable thing on the screen, because it tells us where this week's effort goes.",
+      efficiency: "One team, one scoreboard, reviewed every week — and the colors had to be true. Our scoreboard is hours estimated versus hours turned, and it only works with Ford-style honesty. If a job is going over, going red at hour two — 'this is fighting me, here's why' — gives us time to send help and fixes the next estimate on that kind of job. Going green until the invoice prints helps nobody. Your efficiency number isn't there to grade you quietly. It's there so problems get visible while they're still cheap — and 'who can help?' is always the next question, never 'whose fault?'",
       resilience: "Ford borrowed twenty-three billion dollars and put up the company logo itself as collateral — betting everything they had on one honest plan, right before the worst recession in eighty years. Then they just kept working the plan, Thursday after Thursday, until they came out the other side alone among Detroit's Big Three. Turnarounds aren't one big heroic day. They're the same honest meeting, repeated until the reds turn green for real.",
     },
     quote: { text: "You can't manage a secret.", by: "Alan Mulally, CEO of Ford" },
@@ -651,7 +459,7 @@ const STORIES = [
       "Then UPS went further with a routing system called ORION, and put a number on the philosophy that everyone should hear: saving each driver just one mile a day, across the fleet, is worth about fifty million dollars a year. Not one big breakthrough — one boring, invisible mile, multiplied by everybody, every day.",
     ],
     bridges: {
-      efficiency: "We all have left turns in this shop — they just don't look like left turns. The second walk to the parts counter because the first trip missed a fitting. The tool that lives on the wrong side of the bay. The unit shuffled twice because the schedule and the floor didn't talk. None of them feels expensive — that's exactly the point. This week, find your one mile: one trip, one wait, one double-handle we can design out. One mile per person per day made UPS fifty million dollars. Ours pays off the same way.",
+      efficiency: "Here's why this story is personal. UPS didn't find those savings in one big change — they found them inside every individual driver's route, one avoided idle at a time. Your hours against the estimate work exactly the same way. The second walk to the parts counter because the first trip missed a fitting. The tool that lives on the wrong side of the bay. The twenty minutes waiting on an answer you could have asked for an hour earlier. None of them feels expensive — that's the trap — and together they're the whole difference between beating your hours and blowing them. Find your one mile this week. It's hiding somewhere in your route.",
       quality: "UPS didn't guess that left turns were bad — telematics on every truck measured idle time, fuel burn, and accidents until the pattern was undeniable. Our version of telematics is the data we already write down: hours on work orders, comeback causes, parts delays. Recorded honestly, that data will show us our left turns. Recorded sloppily, it hides them. The measurement is the flashlight.",
       growth: "Nobody ever got fired for turning left — it's how everyone drives, it's 'normal.' It took someone willing to question a habit that ordinary to find the savings. That's a skill, and it's trainable: this week, everybody brings one 'why do we actually do it this way?' to the floor. Most answers will be fine. But every shop is sitting on at least one left turn nobody's questioned in years.",
     },
@@ -747,7 +555,7 @@ const STORIES = [
       "It worked. Three planes flew the four-plane schedule, the company posted its first profit in 1973, and the ten-minute turn became the engine of the most remarkable run in aviation: 47 consecutive profitable years, a streak no other major airline has touched. The near-death experience didn't just save Southwest — it became Southwest. The constraint was the invention.",
     ],
     bridges: {
-      efficiency: "A service bay is our airplane: it only earns when there's a unit in it being worked. Every hour a bay holds a truck that's waiting — on parts, on paperwork, on a decision — is a plane parked at the gate. The ten-minute turn is a playbook we can run: stage the parts before the unit arrives, have the work order complete and clear, know what rolls in the moment something rolls out, do steps in parallel instead of single-file. We don't need more bays any more than Southwest needed more planes. We need faster turns between the wrench time.",
+      efficiency: "A service bay is your airplane: it only earns while there's a unit in it being worked — and your hours only beat the estimate while the wrench is actually turning. Every stretch a job sits waiting — on parts, on paperwork, on a decision — is a plane parked at the gate, burning your clock with the engines off. The ten-minute turn is a playbook any one of us can run on any job: parts staged before the unit rolls in, the work order read and clear, the next step known before the current one ends, steps run in parallel instead of single-file. You don't need to wrench faster to beat your hours. You need shorter turns between the wrench time.",
       teamwork: "During a Southwest turn, there was no 'not my job' — pilots picked up trash, everyone worked the plane, because the plane leaving on time was everybody's job. That's the culture that beats any org chart: when a bay needs turning or a deadline unit needs hands, titles wait in the truck. The shops that win aren't the ones with the best job descriptions. They're the ones where everyone owns the turn.",
       resilience: "Losing a plane should have been the beginning of the end — instead it forced the invention that defined the company for fifty years. That's worth remembering the next time this shop loses something: a key tech, a big contract, a piece of equipment down for a month. The constraint isn't automatically a catastrophe. Sometimes it's the question that finally makes us find the better way we'd never have looked for.",
     },
@@ -759,9 +567,7 @@ const STORIES = [
 /* Curated order for the weekly rotation (variety of themes/regions week to week). */
 const WEEKLY_ORDER = [
   "chilean-miners", "southwest-turn", "inca-roads", "sully-hudson", "golden-gate-net",
-  "chinampas", "mulally-ford", "apollo13", "san-martin", "ups-left-turns",
-  "andon-cord", "puebla", "starbucks-retraining", "nightingale", "bolivar-andes",
-  "miracle-on-ice", "quipu", "wright-brothers", "tylenol-recall", "maya-astronomers",
-  "shackleton", "juana-azurduy", "aqueducts", "hannibal", "voladores",
-  "cincinnatus", "ironbridge", "panama-canal",
+  "san-martin", "mulally-ford", "apollo13", "chinampas", "ups-left-turns",
+  "andon-cord", "starbucks-retraining", "nightingale", "miracle-on-ice", "quipu",
+  "wright-brothers", "tylenol-recall", "shackleton", "voladores", "panama-canal",
 ];

@@ -21,11 +21,13 @@ Search any topic — *"rescue"*, *"Inca"*, *"underdog"*, *"data"* — or filter 
 - **A pocket fact** for hallway conversations after the meeting
 
 ### 📚 The Library
-28 curated stories, told from the front of a shop rather than a lectern:
+20 curated stories, told from the front of a shop rather than a lectern — every one selected because it bridges hard into **individual efficiency (hours estimated vs. hours on the job), industrial safety, or teamwork**:
 
-- **Latin American history** — the 2010 Chilean miners rescue, the Inca chasqui relay runners and quipu record-keepers, the Aztec chinampas, Bolívar and San Martín crossing the Andes, the Battle of Puebla, Maya astronomers, Juana Azurduy, and the Voladores of Veracruz
-- **History everyone knows** — Shackleton, Apollo 13, the Wright brothers, Hannibal, Rome's aqueducts and Cincinnatus, Florence Nightingale, the Golden Gate Bridge safety net, the Panama Canal, the Miracle on Ice
+- **Latin American history** — the 2010 Chilean miners rescue, the Inca chasqui relay runners and quipu record-keepers, the Aztec chinampas, San Martín's Army of the Andes, the Panama Canal, and the Voladores of Veracruz
+- **History everyone knows** — Shackleton, Apollo 13, the Wright brothers, Florence Nightingale, the Golden Gate Bridge safety net, the Miracle on Ice
 - **Modern business stories** — the Miracle on the Hudson, Ford's turnaround under Alan Mulally, UPS's no-left-turns routing, Starbucks closing 7,100 stores to practice, the Tylenol recall, Southwest's ten-minute turn, and Toyota's andon cord
+
+The **Efficiency** theme is written for shops graded on estimate performance: every efficiency bridge and closer talks about beating the quoted hours — planning the job before the wrench, staging parts, clean handoffs, flagging early when a job fights back, and logging honest hours so the next estimate is right.
 
 ⭐ favorite the ones you love, and ✓ mark stories as **told** so you never repeat one with the team.
 
