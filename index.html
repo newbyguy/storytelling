@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Toolbox Tales — History-powered storytelling for your Wednesday meeting</title>
+  <meta name="description" content="Turn great moments from Latin American and world history into powerful shop-floor talks about safety, efficiency, quality, and teamwork. Built for weekly team meetings." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🔧</text></svg>" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#" data-nav="home">
+        <span class="brand-mark">🔧</span>
+        <span class="brand-text">
+          <span class="brand-name">Toolbox&nbsp;Tales</span>
+          <span class="brand-tag">History-powered talks for the shop</span>
+        </span>
+      </a>
+      <nav class="main-nav" aria-label="Main">
+        <button class="nav-btn active" data-nav="home">This Wednesday</button>
+        <button class="nav-btn" data-nav="find">Find a Story</button>
+        <button class="nav-btn" data-nav="library">Library</button>
+        <button class="nav-btn" data-nav="practice">Practice</button>
+      </nav>
+      <button class="icon-btn settings-btn" id="openSettings" title="Settings (AI story generator)" aria-label="Settings">⚙️</button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ HOME: THIS WEDNESDAY ============ -->
+    <section class="view active" id="view-home">
+      <div class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow" id="countdownLine">Loading…</p>
+          <h1>Every great meeting starts with a story.</h1>
+          <p class="lede">
+            One story from history each week — heavy on Latin American history — with a built-in
+            bridge to <strong>safety, efficiency, quality</strong> and the other things that matter
+            in the shop. Read it, shape it for your audience, practice it, then own the room on Wednesday.
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" id="heroBuildBtn">Build this week's talk</button>
+            <button class="btn btn-ghost" id="heroShuffleBtn">🎲 Surprise me — practice tonight</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label"><span>This week's story</span></div>
+      <div id="weeklyCard" class="weekly-card-slot"></div>
+
+      <div class="section-label"><span>How to use your week</span></div>
+      <div class="ritual-grid">
+        <div class="ritual-card">
+          <div class="ritual-step">1</div>
+          <h3>Pick &amp; shape</h3>
+          <p>Take the weekly story (or search your own topic), choose the theme — safety, efficiency, quality — and who you're talking to. The builder assembles a ready-to-speak script.</p>
+        </div>
+        <div class="ritual-card">
+          <div class="ritual-step">2</div>
+          <h3>Practice out loud</h3>
+          <p>Any weeknight, open Practice mode: teleprompter, timer, cue cards, and a recorder so you can hear yourself. Two run-throughs beat ten silent read-throughs.</p>
+        </div>
+        <div class="ritual-card">
+          <div class="ritual-step">3</div>
+          <h3>Tell it Wednesday</h3>
+          <p>Open the meeting with the story, land the bridge line, then roll into your numbers — financials, efficiency, what's new, upcoming training. Mark it "told" so you never repeat one.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FIND A STORY ============ -->
+    <section class="view" id="view-find">
+      <div class="view-head">
+        <h1>Find a story</h1>
+        <p class="lede">Search any topic — "teamwork", "Aztec", "rescue", "underdog" — or filter by theme. Every result comes ready to shape into a talk.</p>
+      </div>
+
+      <div class="search-bar">
+        <input type="search" id="searchInput" placeholder="Try: safety… Inca… comeback… data… mountains…" autocomplete="off" />
+        <button class="btn btn-primary" id="searchBtn">Search</button>
+      </div>
+
+      <div class="chip-row" id="themeChips" role="group" aria-label="Filter by theme"></div>
+
+      <div id="searchResults" class="card-grid"></div>
+
+      <div class="ai-callout" id="aiCallout">
+        <div class="ai-callout-text">
+          <h3>Want a brand-new story on any topic?</h3>
+          <p id="aiCalloutBlurb">Connect an AI key in <button class="linklike" data-open-settings>Settings</button> and Toolbox Tales can write a fresh, historically-grounded story on whatever topic you type — shaped for your theme and audience.</p>
+        </div>
+        <button class="btn btn-accent" id="aiGenerateBtn">✨ Generate with AI</button>
+      </div>
+      <div id="aiResult"></div>
+    </section>
+
+    <!-- ============ LIBRARY ============ -->
+    <section class="view" id="view-library">
+      <div class="view-head">
+        <h1>Story library</h1>
+        <p class="lede">Every story in the collection — told from the front of a shop, not a lectern. ⭐ your favorites, and ✓ the ones you've already told so nothing repeats.</p>
+      </div>
+      <div class="library-filters">
+        <div class="chip-row" id="libraryThemeChips"></div>
+        <label class="toggle">
+          <input type="checkbox" id="favoritesOnly" />
+          <span>⭐ Favorites only</span>
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="hideTold" />
+          <span>Hide already told</span>
+        </label>
+      </div>
+      <div id="libraryGrid" class="card-grid"></div>
+    </section>
+
+    <!-- ============ TALK BUILDER ============ -->
+    <section class="view" id="view-builder">
+      <div class="view-head builder-head">
+        <button class="btn btn-ghost btn-small" id="builderBack">← Back</button>
+        <h1>Shape your talk</h1>
+      </div>
+
+      <div class="builder-controls">
+        <div class="control-group">
+          <label>Message theme</label>
+          <div class="chip-row" id="builderThemeChips"></div>
+        </div>
+        <div class="control-group">
+          <label>Who's in the room?</label>
+          <div class="chip-row" id="builderAudienceChips"></div>
+        </div>
+      </div>
+
+      <article class="script-sheet" id="scriptSheet"></article>
+
+      <div class="builder-actions">
+        <button class="btn btn-primary" id="practiceThisBtn">🎤 Practice this talk</button>
+        <button class="btn btn-ghost" id="copyScriptBtn">📋 Copy script</button>
+        <button class="btn btn-ghost" id="printScriptBtn">🖨️ Print</button>
+        <button class="btn btn-ghost" id="markToldBtn">✓ Mark as told</button>
+      </div>
+    </section>
+
+    <!-- ============ PRACTICE ============ -->
+    <section class="view" id="view-practice">
+      <div class="view-head">
+        <h1>Practice room</h1>
+        <p class="lede" id="practiceSubtitle">Pick a story, then rehearse it like it's Wednesday morning.</p>
+      </div>
+
+      <div id="practiceEmpty" class="practice-empty">
+        <p>No talk loaded yet. Build one first, or grab one to rehearse right now:</p>
+        <div class="practice-empty-actions">
+          <button class="btn btn-primary" id="practiceWeeklyBtn">Load this week's story</button>
+          <button class="btn btn-ghost" id="practiceRandomBtn">🎲 Random story</button>
+        </div>
+      </div>
+
+      <div id="practiceRoom" class="practice-room" hidden>
+        <div class="practice-meta">
+          <div>
+            <h2 id="practiceTitle"></h2>
+            <p class="practice-stats" id="practiceStats"></p>
+          </div>
+          <div class="practice-mode-toggle" role="group" aria-label="Practice view">
+            <button class="mode-btn active" data-pmode="script">Full script</button>
+            <button class="mode-btn" data-pmode="cues">Cue cards</button>
+          </div>
+        </div>
+
+        <div class="practice-toolbar">
+          <div class="tool-cluster">
+            <span class="tool-label">Timer</span>
+            <span class="timer-display" id="timerDisplay">0:00</span>
+            <button class="btn btn-small btn-primary" id="timerToggle">▶ Start</button>
+            <button class="btn btn-small btn-ghost" id="timerReset">Reset</button>
+          </div>
+          <div class="tool-cluster">
+            <span class="tool-label">Auto-scroll</span>
+            <button class="btn btn-small btn-ghost" id="scrollToggle">▶ Roll</button>
+            <input type="range" id="scrollSpeed" min="1" max="10" value="4" title="Scroll speed" />
+          </div>
+          <div class="tool-cluster">
+            <span class="tool-label">Text size</span>
+            <input type="range" id="fontSize" min="18" max="44" value="26" title="Text size" />
+          </div>
+          <div class="tool-cluster">
+            <button class="btn btn-small btn-ghost" id="listenBtn" title="Hear the script read aloud">🔊 Listen</button>
+            <button class="btn btn-small btn-accent" id="recordBtn" title="Record yourself with the microphone">● Record</button>
+          </div>
+        </div>
+
+        <div class="teleprompter" id="teleprompter" tabindex="0"></div>
+
+        <div class="takes-panel" id="takesPanel" hidden>
+          <h3>Your takes</h3>
+          <p class="takes-hint">Listen back — you'll fix more in five minutes of listening than in five run-throughs.</p>
+          <div id="takesList"></div>
+        </div>
+
+        <aside class="tip-box">
+          <span class="tip-icon">💡</span>
+          <p id="tipText"></p>
+          <button class="btn btn-small btn-ghost" id="nextTipBtn">Next tip</button>
+        </aside>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Built for Wednesday mornings. Stories are history — check details you plan to state as fact, and make them your own when you tell them.</p>
+  </footer>
+
+  <!-- ============ SETTINGS MODAL ============ -->
+  <dialog id="settingsModal" class="modal">
+    <form method="dialog" class="modal-body">
+      <h2>Settings</h2>
+
+      <h3>AI story generator <span class="badge-optional">optional</span></h3>
+      <p class="modal-note">
+        The built-in library works with no setup. If you also want brand-new stories on any topic,
+        paste an API key for an OpenAI-compatible service. The key is stored only in this browser.
+      </p>
+      <label class="field">
+        <span>API key</span>
+        <input type="password" id="aiKey" placeholder="sk-…" autocomplete="off" />
+      </label>
+      <label class="field">
+        <span>Base URL</span>
+        <input type="text" id="aiBaseUrl" placeholder="https://api.openai.com/v1" />
+      </label>
+      <label class="field">
+        <span>Model</span>
+        <input type="text" id="aiModel" placeholder="gpt-4o-mini" />
+      </label>
+
+      <h3>Your meeting</h3>
+      <label class="field">
+        <span>Default audience</span>
+        <select id="defaultAudience">
+          <option value="everyone">Whole team</option>
+          <option value="technicians">Technicians</option>
+          <option value="office">Office &amp; support staff</option>
+        </select>
+      </label>
+
+      <div class="modal-actions">
+        <button class="btn btn-ghost" value="cancel">Cancel</button>
+        <button class="btn btn-primary" id="saveSettings" value="save">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
