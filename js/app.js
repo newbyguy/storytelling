@@ -129,6 +129,7 @@ function renderWeeklyCard() {
       <h2>${story.title}</h2>
       <p class="hook">${story.hook}</p>
       <p class="weekly-preview">${story.story[0]}</p>
+      ${story.quote ? `<blockquote class="weekly-quote"><p>“${story.quote.text}”</p><cite>— ${story.quote.by}</cite></blockquote>` : ""}
     </div>
     <div class="weekly-side">
       <button class="btn btn-primary" data-build="${story.id}">Build my talk →</button>
@@ -328,6 +329,11 @@ function scriptHtml(talk) {
     <div class="script-note">Say it, then pause for two beats. Let the room lean in.</div>
     <p class="script-par script-hook">${story.hook}</p>
 
+    ${story.context ? `
+    <div class="script-kicker">Set the Scene</div>
+    <div class="script-note">Ground the room before the story starts — this is where they realize they already know pieces of it.</div>
+    <p class="script-par">${story.context}</p>` : ""}
+
     <div class="script-kicker">The Story</div>
     ${story.story.map((p) => `<p class="script-par">${p}</p>`).join("")}
 
@@ -338,13 +344,25 @@ function scriptHtml(talk) {
     <div class="script-kicker">The Message — for ${audience.label.toLowerCase()}</div>
     <p class="script-par">${closer}</p>
 
+    ${story.quote ? `
+    <div class="script-kicker">The Quote — Leave It On the Board</div>
+    <div class="script-note">Write it on the whiteboard before the meeting and leave it up — it's the shop's theme until next Wednesday.</div>
+    <blockquote class="script-quote">
+      <p>${story.quote.text}</p>
+      <cite>— ${story.quote.by}</cite>
+    </blockquote>` : ""}
+
     ${story.funFact ? `<div class="script-funfact">💬 <strong>Pocket fact</strong> (great for hallway conversations after): ${story.funFact}</div>` : ""}
   `;
 }
 
 function scriptText(talk) {
   const { story, bridge, closer } = scriptSections(talk);
-  return [story.hook, ...story.story, bridge, closer].join("\n\n");
+  const parts = [story.hook];
+  if (story.context) parts.push(story.context);
+  parts.push(...story.story, bridge, closer);
+  if (story.quote) parts.push(`"${story.quote.text}" — ${story.quote.by}`);
+  return parts.join("\n\n");
 }
 
 /* builder actions */
@@ -407,12 +425,14 @@ function renderTeleprompter() {
   if (state.practiceMode === "cues") {
     const cues = [
       { label: "Hook — then PAUSE", text: story.hook },
+      ...(story.context ? [{ label: "Set the scene", text: firstSentence(story.context) }] : []),
       ...story.story.map((p, i) => ({
         label: "Beat " + (i + 1),
         text: firstSentence(p),
       })),
       { label: "Bridge → " + theme.label, text: firstSentence(bridge) },
       { label: "Close — " + audience.short, text: firstSentence(closer) },
+      ...(story.quote ? [{ label: "Quote — last words", text: `“${story.quote.text}”` }] : []),
     ];
     tp.innerHTML = `<ul class="tp-cues">${cues.map((c) =>
       `<li><span class="cue-label">${c.label}</span>${c.text}</li>`).join("")}</ul>
@@ -421,12 +441,14 @@ function renderTeleprompter() {
     tp.innerHTML = `
       <p class="tp-kicker">Hook — say it, then pause</p>
       <p class="tp-hook">${story.hook}</p>
+      ${story.context ? `<p class="tp-kicker">Set the scene</p><p>${story.context}</p>` : ""}
       <p class="tp-kicker">Story</p>
       ${story.story.map((p) => `<p>${p}</p>`).join("")}
       <p class="tp-kicker">Bridge — ${theme.label} — slow down</p>
       <p>${bridge}</p>
       <p class="tp-kicker">Message for ${audience.label}</p>
       <p>${closer}</p>
+      ${story.quote ? `<p class="tp-kicker">The quote — slow, then stop</p><p class="tp-hook">“${story.quote.text}”<br>— ${story.quote.by}</p>` : ""}
       <p class="tp-end">— HOLD ONE BEAT, THEN INTO THE AGENDA —</p>`;
   }
   tp.scrollTop = 0;
@@ -662,8 +684,10 @@ Respond with ONLY valid JSON, no markdown fences, in exactly this shape:
   "region": "string",
   "year": "string",
   "hook": "one gripping opening line",
+  "context": "one spoken scene-setting line that connects the story to something the audience already knows",
   "story": ["paragraph 1", "paragraph 2", "paragraph 3", "paragraph 4"],
-  "bridge": "one paragraph that turns the history into a lesson about the theme for a vehicle-service shop",
+  "bridge": "one paragraph that turns the history into a lesson about the theme, landing on a concrete behavior in a vehicle-service shop (bays, work orders, inspections, parts, handoffs)",
+  "quote": { "text": "a real, verifiable historical quote or traditional phrase that fits the story — never invent one", "by": "who said it or where it comes from" },
   "funFact": "one short surprising fact"
 }`;
   const user = `Topic: ${topic}
@@ -709,8 +733,10 @@ Length: the four story paragraphs together should take about 2 minutes to say al
     era: "AI-generated — double-check facts before you tell it",
     tags: [topic],
     hook: parsed.hook || "",
+    context: parsed.context || "",
     story: Array.isArray(parsed.story) ? parsed.story : [String(parsed.story)],
     bridges: { [themeKey]: parsed.bridge || "" },
+    quote: parsed.quote && parsed.quote.text ? { text: parsed.quote.text, by: parsed.quote.by || "" } : null,
     funFact: parsed.funFact || "",
   };
 }
