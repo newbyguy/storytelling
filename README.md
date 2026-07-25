@@ -12,11 +12,12 @@ A featured story rotates automatically every week (it flips each Thursday, so th
 ### 🔍 Find a Story
 Search any topic — *"rescue"*, *"Inca"*, *"underdog"*, *"data"* — or filter by theme. Every story in the library is written to be **spoken**, not read, and comes with:
 
-- **The Hook** — one gripping opening line (with a reminder to pause after it)
+- **The Hook** — one gripping opening line (coaching notes vary story to story)
 - **Set the Scene** — a spoken context line that connects the story to something the room already knows
 - **The Story** — 2–3 minutes of history at a comfortable speaking pace
 - **The Bridge** — pre-written tie-ins that turn the history into a concrete shop lesson for your chosen theme
-- **The Message** — a closing call-to-action tailored to who's in the room: **technicians**, **office & support staff**, or the **whole team**
+- **The Challenge** — a hand-written, story-specific personal challenge, spoken to each individual in the room ("find your Hill", "drain your pond", "start your notebook") with one concrete action for the week — no two stories share one
+- **The Send-off** — a short final word tailored to who's in the room: **technicians**, **office & support staff**, or the **whole team**
 - **The Quote** — a real historical quote or phrase to write on the whiteboard and leave up as the theme until next Wednesday
 - **A pocket fact** for hallway conversations after the meeting
 

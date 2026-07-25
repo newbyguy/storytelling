@@ -318,6 +318,17 @@ function scriptSections(talk) {
   return { story, theme, audience, bridge, closer };
 }
 
+/* Stable per-story hash so each story gets its own (consistent) coaching notes. */
+function storySeed(id) {
+  let h = 0;
+  for (let i = 0; i < id.length; i++) h = (h * 31 + id.charCodeAt(i)) >>> 0;
+  return h;
+}
+function noteFor(section, storyId, offset = 0) {
+  const pool = SECTION_NOTES[section];
+  return pool[(storySeed(storyId) + offset) % pool.length];
+}
+
 function scriptHtml(talk) {
   const { story, theme, audience, bridge, closer } = scriptSections(talk);
   const words = scriptText(talk).split(/\s+/).length;
@@ -327,27 +338,32 @@ function scriptHtml(talk) {
     <h2 class="script-title">${story.title}</h2>
 
     <div class="script-kicker">The Hook</div>
-    <div class="script-note">Say it, then pause for two beats. Let the room lean in.</div>
+    <div class="script-note">${noteFor("hook", story.id)}</div>
     <p class="script-par script-hook">${story.hook}</p>
 
     ${story.context ? `
     <div class="script-kicker">Set the Scene</div>
-    <div class="script-note">Ground the room before the story starts — this is where they realize they already know pieces of it.</div>
+    <div class="script-note">${noteFor("scene", story.id)}</div>
     <p class="script-par">${story.context}</p>` : ""}
 
     <div class="script-kicker">The Story</div>
     ${story.story.map((p) => `<p class="script-par">${p}</p>`).join("")}
 
     <div class="script-kicker">The Bridge — ${theme.label}</div>
-    <div class="script-note">Slow down here. This is the turn from history to your shop.</div>
+    <div class="script-note">${noteFor("bridge", story.id)}</div>
     <p class="script-par">${bridge}</p>
 
-    <div class="script-kicker">The Message — for ${audience.label.toLowerCase()}</div>
+    ${story.challenge ? `
+    <div class="script-kicker">The Challenge — Make It Personal</div>
+    <div class="script-note">${noteFor("challenge", story.id)}</div>
+    <p class="script-par">${story.challenge}</p>` : ""}
+
+    <div class="script-kicker">The Send-off — for ${audience.label.toLowerCase()}</div>
     <p class="script-par">${closer}</p>
 
     ${story.quote ? `
     <div class="script-kicker">The Quote — Leave It On the Board</div>
-    <div class="script-note">Write it on the whiteboard before the meeting and leave it up — it's the shop's theme until next Wednesday.</div>
+    <div class="script-note">${noteFor("quote", story.id)}</div>
     <blockquote class="script-quote">
       <p>${story.quote.text}</p>
       <cite>— ${story.quote.by}</cite>
@@ -361,7 +377,9 @@ function scriptText(talk) {
   const { story, bridge, closer } = scriptSections(talk);
   const parts = [story.hook];
   if (story.context) parts.push(story.context);
-  parts.push(...story.story, bridge, closer);
+  parts.push(...story.story, bridge);
+  if (story.challenge) parts.push(story.challenge);
+  parts.push(closer);
   if (story.quote) parts.push(`"${story.quote.text}" — ${story.quote.by}`);
   return parts.join("\n\n");
 }
@@ -432,7 +450,8 @@ function renderTeleprompter() {
         text: firstSentence(p),
       })),
       { label: "Bridge → " + theme.label, text: firstSentence(bridge) },
-      { label: "Close — " + audience.short, text: firstSentence(closer) },
+      ...(story.challenge ? [{ label: "The challenge — eye contact", text: firstSentence(story.challenge) }] : []),
+      { label: "Send-off — " + audience.short, text: firstSentence(closer) },
       ...(story.quote ? [{ label: "Quote — last words", text: `“${story.quote.text}”` }] : []),
     ];
     tp.innerHTML = `<ul class="tp-cues">${cues.map((c) =>
@@ -447,7 +466,8 @@ function renderTeleprompter() {
       ${story.story.map((p) => `<p>${p}</p>`).join("")}
       <p class="tp-kicker">Bridge — ${theme.label} — slow down</p>
       <p>${bridge}</p>
-      <p class="tp-kicker">Message for ${audience.label}</p>
+      ${story.challenge ? `<p class="tp-kicker">The challenge — talk to each person</p><p>${story.challenge}</p>` : ""}
+      <p class="tp-kicker">Send-off for ${audience.label}</p>
       <p>${closer}</p>
       ${story.quote ? `<p class="tp-kicker">The quote — slow, then stop</p><p class="tp-hook">“${story.quote.text}”<br>— ${story.quote.by}</p>` : ""}
       <p class="tp-end">— HOLD ONE BEAT, THEN INTO THE AGENDA —</p>`;
@@ -690,6 +710,7 @@ Respond with ONLY valid JSON, no markdown fences, in exactly this shape:
   "context": "one spoken scene-setting line that connects the story to something the audience already knows",
   "story": ["paragraph 1", "paragraph 2", "paragraph 3", "paragraph 4"],
   "bridge": "one paragraph that turns the history into a lesson about the theme, landing on a concrete behavior in a vehicle-service shop (bays, work orders, inspections, parts, handoffs)",
+  "challenge": "a direct, second-person challenge to each individual listener for the coming week — tied to the story's central image, ending with one concrete action a person can take on their own; motivational, personal, never generic",
   "quote": { "text": "a real, verifiable historical quote or traditional phrase that fits the story — never invent one", "by": "who said it or where it comes from" },
   "funFact": "one short surprising fact"
 }`;
@@ -739,6 +760,7 @@ Length: the four story paragraphs together should take about 2 minutes to say al
     context: parsed.context || "",
     story: Array.isArray(parsed.story) ? parsed.story : [String(parsed.story)],
     bridges: { [themeKey]: parsed.bridge || "" },
+    challenge: parsed.challenge || "",
     quote: parsed.quote && parsed.quote.text ? { text: parsed.quote.text, by: parsed.quote.by || "" } : null,
     funFact: parsed.funFact || "",
   };
